@@ -12,8 +12,18 @@ void setup()
 
 void loop()
 {
+  delay(1000);
+    
+  for (uint8_t i = 0; i < 5; i++)
+  {
+      Serial.print("values[");
+      Serial.print(i);
+      Serial.print("]=");
+      Serial.println(values[i]);
+  }
   
 }
+//todo: func to print one value:
 
 
 void serialEvent()
