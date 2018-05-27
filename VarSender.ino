@@ -1,12 +1,15 @@
-#include <Arduino.h>
+#include <Arduino.h>  
+#include "VarSenderLib.h"
 
-uint8_t values[100]; //from A to Z
+
+VarSender v = VarSender();
+
 
 
 void setup()
 {
   Serial.begin(9600);
-
+  
 
 }
 
@@ -16,15 +19,10 @@ void loop()
     
   for (uint8_t i = 0; i < 5; i++)
   {
-      Serial.print("values[");
-      Serial.print(i);
-      Serial.print("]=");
-      Serial.println(values[i]);
+    v.printVar(i);
   }
   
 }
-//todo: func to print one value:
-
 
 void serialEvent()
 { //new char on serialport
@@ -44,7 +42,8 @@ void serialEvent()
         value = Serial.read(); //-100;
       } while (value < 0);
       value -= 100;
-      values[destination] = value;
+      v.setVar(destination,value);
+      //values[destination] = value;
     }
   }
 }
