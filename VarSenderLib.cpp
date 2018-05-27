@@ -23,10 +23,10 @@ void VSL::setVar(uint8_t var, uint8_t value)
   values[var]=value;
 }
 
-
-
-void serialEvent()
-{ //new char on serialport
+/*
+void VSL::serialEvent(void)
+{
+  
   uint8_t destination, value;
   while (Serial.available())
   {
@@ -48,5 +48,4 @@ void serialEvent()
     }
   }
 }
-
-
+*/
