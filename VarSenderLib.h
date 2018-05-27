@@ -1,9 +1,9 @@
 #include <Arduino.h>  
 
-static class VarSender
+static class VSL
 {
   public:
-  //VarSender();
+  //VSL();
   void printVar(uint8_t number);
   void setVar(uint8_t var, uint8_t value);
   // void sendVar(uint8_t var);

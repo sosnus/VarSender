@@ -1,18 +1,18 @@
 
 #include "VarSenderLib.h"
   
-  void VarSender::printVar(uint8_t number);
-  void VarSender::setVar(uint8_t var, uint8_t value);
+  void VSL::printVar(uint8_t number);
+  void VSL::setVar(uint8_t var, uint8_t value);
   // void sendVar(uint8_t var);
 
 
-  VarSender::VarSender(void)
+  VSL::VSL(void)
   {
     if(1);
   }
   
 //todo: func to print one value:
-void VarSender::printVar(uint8_t number)
+void VSL::printVar(uint8_t number)
 {
       Serial.print("v[");
       Serial.print(number);
@@ -21,7 +21,7 @@ void VarSender::printVar(uint8_t number)
 }
 
 
-void VarSender::setVar(uint8_t var, uint8_t value)
+void VSL::setVar(uint8_t var, uint8_t value)
 {
   values[var]=value;
 }

@@ -2,7 +2,7 @@
 #include "VarSenderLib.h"
 
 
-VarSender v = VarSender();
+//VSL v = VSL();
 
 
 
