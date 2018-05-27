@@ -1,4 +1,4 @@
-#include <Arduino.h>  
+#include <Arduino.h>
 #include "VarSenderLib.h"
 
 void setup()
@@ -9,30 +9,24 @@ void setup()
 void loop()
 {
   delay(1000);
-    
+
   for (uint8_t i = 0; i < 5; i++)
   {
-   BANK.printVar(i);
-   //BANK.getVar(i);
-  } 
+    BANK.printVar(i);
+    //BANK.getVar(i);
+  }
 }
 
 
 void serialEvent()
 {
-    if ((char)Serial.read() == '!') //start transmission
-    {
-      do
-      {
-        BANK.destination = Serial.read(); //-64;
-      } while (BANK.destination < 0);
-      BANK.destination -= 65;
-      do
-      {
-        BANK.value = Serial.read(); //-100;
-      } while (BANK.value < 0);
-      BANK.value -= 100;
-      BANK.setVarBuff();
-    }
+  BANK.temp = Serial.read();
+  if (BANK.temp < 64); //nothing
+  else if (BANK.temp < 100)BANK.destination = BANK.temp - 65; //var
+  else if (BANK.temp < 201) //val
+  {
+    BANK.value = BANK.temp - 100;
+    BANK.setVarBuff();
+  }
+  else;
 }
-
