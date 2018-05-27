@@ -1,5 +1,19 @@
 #include <Arduino.h>
 
+#define SERIAL_PARSER  void serialEvent() \
+{\
+  BANK.temp = Serial.read();\
+  if (BANK.temp < 64); /*nothing */ \
+  else if (BANK.temp < 100)BANK.destination = BANK.temp - 65; /*var */ \
+  else if (BANK.temp < 201) /* //val */ \
+  { \
+    BANK.value = BANK.temp - 100;\
+    BANK.setVarBuff();\
+  }\
+  else;\
+}
+
+
 static class VSL
 {
   public:

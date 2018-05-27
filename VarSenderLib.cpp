@@ -1,6 +1,6 @@
 
 #include "VarSenderLib.h"
-  
+
   void VSL::printVar(uint8_t number);
   void VSL::setVar(uint8_t var, uint8_t value);
   // void sendVar(uint8_t var);
@@ -34,8 +34,8 @@ void VSL::setVar(uint8_t var, uint8_t value)
 void VSL::setAndSendVar(uint8_t var, uint8_t value)
 {
   values[var]=value;
-  Serial.write(var);
-  Serial.write(value);
+ // Serial.write(var);
+ // Serial.write(value);
 }
 
 /*
