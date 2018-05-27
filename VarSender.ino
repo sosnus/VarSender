@@ -21,25 +21,24 @@ void loop()
 void serialEvent()
 { //new char on serialport
 
-  uint8_t destination, value;
-  while (Serial.available())
-  {
-    //start trans [!] variabl. [A-Z] value [100-199]
+//  while (Serial.available())
+//  {
     if ((char)Serial.read() == '!') //start transmission
     {
       do
       {
-        destination = Serial.read(); //-64;
-      } while (destination < 0);
-      destination -= 65;
+        BANK.destination = Serial.read(); //-64;
+      } while (BANK.destination < 0);
+      BANK.destination -= 65;
       do
       {
-        value = Serial.read(); //-100;
-      } while (value < 0);
-      value -= 100;
-      BANK.setVar(destination,value);
+        BANK.value = Serial.read(); //-100;
+      } while (BANK.value < 0);
+      BANK.value -= 100;
+      BANK.setVarBuff();
+      //BANK.setVar(destination,value);
       //values[destination] = value;
     }
-  }
+  //}
 }
 

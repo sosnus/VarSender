@@ -18,6 +18,13 @@ void VSL::printVar(uint8_t number)
 }
 
 
+    //  BANK.setVarBuff();
+
+void VSL::setVarBuff(void)
+{
+  values[destination]=value;
+}
+
 void VSL::setVar(uint8_t var, uint8_t value)
 {
   values[var]=value;
