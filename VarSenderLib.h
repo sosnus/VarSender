@@ -9,7 +9,7 @@ static class VSL
   // void sendVar(uint8_t var);
   
 
-  private:
+ // private:
 uint8_t values[100]; //from A to Z
   
-};
+}BANK;

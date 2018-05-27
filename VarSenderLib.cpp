@@ -6,10 +6,7 @@
   // void sendVar(uint8_t var);
 
 
-  VSL::VSL(void)
-  {
-    if(1);
-  }
+ // VSL::VSL(void){ if(1);}
   
 //todo: func to print one value:
 void VSL::printVar(uint8_t number)
@@ -46,7 +43,7 @@ void serialEvent()
         value = Serial.read(); //-100;
       } while (value < 0);
       value -= 100;
-      v.setVar(destination,value);
+      BANK.setVar(destination,value);
       //values[destination] = value;
     }
   }

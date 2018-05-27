@@ -19,7 +19,7 @@ void loop()
     
   for (uint8_t i = 0; i < 5; i++)
   {
-    v.printVar(i);
+   BANK.printVar(i);
   }
   
 }
