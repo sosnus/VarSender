@@ -19,10 +19,7 @@ void loop()
 
 
 void serialEvent()
-{ //new char on serialport
-
-//  while (Serial.available())
-//  {
+{
     if ((char)Serial.read() == '!') //start transmission
     {
       do
@@ -36,9 +33,6 @@ void serialEvent()
       } while (BANK.value < 0);
       BANK.value -= 100;
       BANK.setVarBuff();
-      //BANK.setVar(destination,value);
-      //values[destination] = value;
     }
-  //}
 }
 
