@@ -30,6 +30,14 @@ void VSL::setVar(uint8_t var, uint8_t value)
   values[var]=value;
 }
 
+
+void VSL::setAndSendVar(uint8_t var, uint8_t value)
+{
+  values[var]=value;
+  Serial.write(var);
+  Serial.write(value);
+}
+
 /*
 void VSL::serialEvent(void)
 {
